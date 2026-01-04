@@ -5,8 +5,8 @@ import {
   deleteTodo,
   updateTodo,
   deleteallTodo,
-} from "../controller/todoController.js";
-import {authMiddleware} from "../middleware/AuthMid.js";
+} from "../../controller/todoController.js";
+import {authMiddleware} from "../../middleware/AuthMid.js";
 const router = express.Router();
 
 router.get("/get-todo", authMiddleware, getTodos);

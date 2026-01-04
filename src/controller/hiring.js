@@ -1,4 +1,4 @@
-import Hiring from "../models/hiring.js";
+import Hiring from "../../models/hiring.js";
 export const CreateHiring = async (req, res) => {
   try {
     const {name, age, experience, email} = req.body;

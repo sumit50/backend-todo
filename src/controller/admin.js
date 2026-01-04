@@ -1,7 +1,7 @@
-import todo from "../models/todo.js";
-import User from "../models/user.js";
-import Feedback from "../models/feedback.js";
-import Hiring from "../models/hiring.js";
+import todo from "../../models/todo.js";
+import User from "../../models/user.js";
+import Feedback from "../../models/feedback.js";
+import Hiring from "../../models/hiring.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
