@@ -1,12 +1,19 @@
-// import mongoose from "mongoose";
+import mongoose from "mongoose";
 
-// const userSchema = new mongoose.Schema({
-//   name: String,
-//   email: {
-//     type: String,
-//     unique: true,
-//   },
-//   password: String,
-// });
+const userSchema = new mongoose.Schema(
 
-// export default mongoose.model("User", userSchema);
+
+    {
+
+        name :String, 
+        email:{
+            type:String, unique:true
+        }, 
+        googleId:{
+            String, 
+            avatar:String
+        }, 
+    }, 
+        {timestamps:true}, 
+    
+)

@@ -3,9 +3,11 @@ import mongoose from "mongoose";
 import todoRoutes from "./routes/todoRoutes.js";
 import dotenv from "dotenv";
 import cors from "cors";
+import feedbackRoutes from "./routes/feedback.js";
+import hiringRoutes from "./routes/hiring.js";
 
 import loginRoutes from "./routes/login.js";
-
+import dashboardRoutes from "./routes/Dashboard.js";
 dotenv.config();
 
 const app = express();
@@ -20,6 +22,9 @@ app.use(
 // use routes
 app.use("/todo", todoRoutes);
 app.use("/user", loginRoutes);
+app.use("/feedback", feedbackRoutes);
+app.use("/hiring", hiringRoutes);
+app.use("/dashboard", dashboardRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI)
