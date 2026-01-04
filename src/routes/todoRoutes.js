@@ -6,11 +6,9 @@ import {
   updateTodo,
   deleteallTodo,
 } from "../controller/todoController.js";
-import authMiddleware from "../Middleware/AuthMid.js";
-
+import {authMiddleware} from "../middleware/AuthMid.js";
 const router = express.Router();
 
-// ✅ PROTECTED ROUTES
 router.get("/get-todo", authMiddleware, getTodos);
 router.post("/add-todo", authMiddleware, addTodo);
 router.delete("/delete-todo/:id", authMiddleware, deleteTodo);

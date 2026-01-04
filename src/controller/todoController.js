@@ -79,7 +79,7 @@ export const deleteTodo = async (req, res) => {
 export const updateTodo = async (req, res) => {
   try {
     const {id} = req.params;
-    const {text, completed} = req.body;
+    const {text, status} = req.body;
     const userId = req.user.id;
 
     // if text is being updated, validate it
@@ -89,11 +89,18 @@ export const updateTodo = async (req, res) => {
       });
     }
 
+    // validate status if provided
+    if (status && !["pending", "completed"].includes(status)) {
+      return res.status(400).json({
+        message: "Status must be either 'pending' or 'completed'",
+      });
+    }
+
     const updatedTodo = await Todo.findOneAndUpdate(
       {_id: id, user: userId},
       {
         ...(text && {text: text.trim()}),
-        ...(completed !== undefined && {completed}),
+        ...(status && {status}),
       },
       {new: true}
     );
