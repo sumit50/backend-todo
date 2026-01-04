@@ -1,5 +1,5 @@
 import express from "express";
-import {adminMiddleware, authMiddleware} from "../../middleware/AuthMid.js";
+import {adminMiddleware, authMiddleware} from "../middleware/AuthMid.js";
 import {
   adminLogin,
   getAllTodos,
@@ -12,7 +12,7 @@ import {
   getAllHiring,
   deleteHiring,
   getDashboardStats,
-} from "../../controller/admin.js";
+} from "../controller/admin.js";
 
 const router = express.Router();
 

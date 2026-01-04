@@ -1,4 +1,4 @@
-import Feedback from "../../models/feedback.js";
+import Feedback from "../models/feedback.js";
 
 export const addFeedback = async (req, res) => {
   try {

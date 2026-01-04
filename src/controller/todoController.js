@@ -1,4 +1,4 @@
-import Todo from "../../models/todo.js";
+import Todo from "../models/todo.js";
 
 // REGEX: only alphabets and spaces
 const onlyAlphabetsRegex = /^[A-Za-z\s]+$/;
